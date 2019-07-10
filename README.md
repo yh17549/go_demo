@@ -1,6 +1,6 @@
 # go_tool
 
-## shareFile.go
+## ShareFile.go
 
 * description
 
@@ -9,12 +9,12 @@
 * how to use
 
   ```sh
-  $ go build shareFile.go
-  $ ./shareFile
+  $ go build ShareFile.go
+  $ ./ShareFile
   ```
 
 * help
 
   ```sh
-  $ ./shareFile -h
+  $ ./ShareFile -h
   ```
