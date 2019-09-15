@@ -56,7 +56,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Usage :\n")
 		flag.PrintDefaults()
 		fmt.Println("Example:")
-		fmt.Println("  sh ./shareFile -port 8890 -shutdownMinute 1")
+		fmt.Println("  sh ./shareFile -port 8890 -shutdownMinute 1 -autoShutdown=false")
 	}
 	flag.Parse()
 
