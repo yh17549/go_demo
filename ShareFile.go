@@ -16,7 +16,7 @@ var workDir string
 
 func handerListFile(w http.ResponseWriter, r *http.Request) {
 
-	dir_list, e := ioutil.ReadDir(workDir)
+	dirList, e := ioutil.ReadDir(workDir)
 	if e != nil {
 		fmt.Println("read dir error")
 		return
@@ -37,7 +37,7 @@ func handerListFile(w http.ResponseWriter, r *http.Request) {
 	{{end}}
 </table>
 `))
-	fileListTemplate.Execute(w, dir_list)
+	fileListTemplate.Execute(w, dirList)
 }
 
 var port string
@@ -79,12 +79,12 @@ func main() {
 	for _, value := range addrs {
 		if ipnet, ok := value.(*net.IPNet); ok && !ipnet.IP.IsLoopback() {
 			if ipnet.IP.To4() != nil {
-				listenUrl := ipnet.IP.String() + ":" + port
-				fmt.Println("please visit: http://" + listenUrl)
-				go func(listenUrl string) {
+				listenURL := ipnet.IP.String() + ":" + port
+				fmt.Println("please visit: http://" + listenURL)
+				go func(listenURL string) {
 
-					log.Fatal(http.ListenAndServe(listenUrl, nil))
-				}(listenUrl)
+					log.Fatal(http.ListenAndServe(listenURL, nil))
+				}(listenURL)
 			}
 		}
 	}
